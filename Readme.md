@@ -4,7 +4,7 @@ Another amazing project blowing the minds of millions of users!
 
 Built by two superheros born in a universe where cats can swim and dogs can fly! 
 
-Here are some hints to get the full pleasure as user. Enjoy!
+Here are some hints to get the full pleasure as user. Enjoy! Please don't take this to seriuosly.
 
 1.Choose your database:
 
@@ -24,4 +24,4 @@ The frontend is built with Angular cli. Please run 'npm install' before use!
 
 4.Enjoy the site! Thx for feedback!
 
-P.S. Make sure to check out our amazing 404 page. Regards to Curt!
+P.S. Make sure to check out our amazing 404 page. Regards to ITF!
