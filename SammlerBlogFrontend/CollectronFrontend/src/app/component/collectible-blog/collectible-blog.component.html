@@ -1,0 +1,25 @@
+<div class="container text-center" *ngIf="selectedCollectible">
+
+  <div>
+    <h1>{{selectedCollectible.name}}</h1>
+    <img class="img-thumbnail m-3" src="{{selectedCollectible.imageUrl}}" alt="collectible image">
+    <div class = "overflow-auto bg-light">
+      <p>{{selectedCollectible.description}}</p>
+    </div>
+
+    <hr>
+
+    <h2>The story of my {{selectedCollectible.name}}</h2>
+  </div>
+
+  <div class="post mt-3 border" *ngFor="let post of selectedBlogPosts">
+    <div class="bg-darkgreen text-violet"><strong>{{post.title}}</strong></div>
+    <div class="text-justify">{{post.article}}</div>
+    <div class="bg-light">{{post.timeStamp|date}}</div>
+  </div>
+
+  <div *ngIf="!selectedBlogPosts">
+    <p>There are no blog posts for this collectible yet.</p>
+  </div>
+
+</div>

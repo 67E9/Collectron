@@ -1,0 +1,17 @@
+<div class="container">
+  <form class="card bg-violet p-3 text-light" [formGroup]="typeForm" (ngSubmit)="onSubmit(typeForm.value)">
+    <h4 *ngIf ="routeId">Type: Editing mode</h4>
+    <h4 *ngIf ="!routeId">Type: Adding mode</h4>
+
+    <label *ngIf ="routeId">id:</label>
+    <input *ngIf ="routeId" class="form-control" type="number" formControlName="id" readonly>
+
+    <label>Name: </label>
+    <input class="form-control" type="text" formControlName="name">
+
+    <label>Description: </label>
+    <textarea rows="2" class="form-control" formControlName="description"></textarea>
+
+    <button class="btn btn-warning mt-1 ml-auto d-inline" [disabled]="typeForm.invalid" type="submit">save</button>
+  </form>
+</div>

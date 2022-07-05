@@ -1,0 +1,20 @@
+<div class="card mb-3 bg-violet text-light">
+  <div class="mt-5">
+    <h5 class="text-center" *ngIf="!collectible&&!blogPost">Choose an item!</h5>
+    <div *ngIf="collectible">
+      <img class="img-fluid" src="{{collectible.imageUrl}}" alt="no image">
+      <p class="text-center text-truncate">{{collectible.name}}</p>
+      <button class="btn btn-success mt-1" routerLink="/manager/{{collectible.id}}">manage blog posts</button>
+      <button class="btn btn-success mt-1" routerLink="/types">manage types</button>
+      <button class="btn mt-1 btn-warning" routerLink="/edit_collectible/{{collectible.id}}">edit</button>
+      <button class="btn mt-1 btn-danger" [disabled]="collectible.blogPosts.length > 0" (click)="deleteOnClick()">delete</button>
+    </div>
+    <div *ngIf="blogPost">
+      <img class="img-fluid" src="{{blogPost.collectible.imageUrl}}" alt="no image">
+      <p class="text-center text-truncate">{{blogPost.title}}</p>
+      <button class="btn btn-success mt-1" routerLink="/manager">manage Collectibles</button>
+      <button class="btn mt-1 btn-warning" routerLink="/edit_blog_post/{{blogPost.id}}">edit</button>
+      <button class="btn mt-1 btn-danger" (click)="deleteOnClick()">delete</button>
+    </div>
+  </div>
+</div>

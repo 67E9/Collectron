@@ -1,0 +1,17 @@
+.card {
+  height: 100%;
+  border-radius: 0;
+  padding: 0 10px;
+  min-height: calc(100vh - 100px);
+}
+
+@media (max-width: 767px) {
+  .card{
+    min-height: 10vh;
+  }
+}
+
+.btn{
+  min-width: 76px;
+}
+

@@ -1,0 +1,11 @@
+.thumbnail{
+  width: 200px;
+  height: 160px;
+  object-fit: contain;
+}
+
+.entry{
+  height: 170px;
+  overflow: hidden;
+}
+

@@ -1,0 +1,27 @@
+<div class="row position-static">
+  <div class="mt-2 mb-1 ml-auto">
+    <select class="form-control" id="sorter" (change)="sortBy($event)">
+      <option value="alphabetic_a-z" selected>Alphabetic a-z</option>
+      <option value="alphabetic_z-a">Alphabetic z-a</option>
+      <option value="newest">Newest</option>
+      <option value="oldest">Oldest</option>
+    </select>
+  </div>
+</div>
+<div>
+  <div *ngIf="!allItems.length">
+  <p>No blog posts found.</p>
+  </div>
+  <div *ngFor="let post of allItems" class="entry mb-1">
+    <div class="d-flex justify-content-end page-link" routerLink="/collection/{{post.collectible.id}}">
+      <div class="col-lg-3">
+        <img class="thumbnail img bg-darkgreen" src="{{post.collectible.imageUrl}}">
+      </div>
+      <div class="col-lg-9">
+        <h3>{{post.title}}</h3>
+        <p class="overflow-hidden">{{post.article}}</p>
+        <p>{{post.timeStamp}}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 col-sm-3">
+      <app-sidebar-left (newItemEvent)="addItem($event)"></app-sidebar-left>
+    </div>
+
+    <div  class="col-lg-8 col-sm-6">
+      <div id="accordion">
+        <div class="card">
+
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">Collaps/Expand Collectible Results</button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <div class="mt-1" style="background: aquamarine" *ngFor="let collectible of searchedCollectibles">
+                <div class="d-flex justify-content-end" routerLink="/collection/{{collectible.id}}">
+                  <div class="col-lg-2 mt-2 mb-2">
+                    <img class="img-thumbnail" width="100px" height="100px" src="{{collectible.imageUrl}}" alt="thumbnail">
+                  </div>
+                  <div class="col-lg-8">
+                    <h4>{{collectible.name}}</h4>
+                    <p>Coll.Id: #{{collectible.id}}</p>
+                    <a routerLink="/collection/{{collectible.id}}">more details...</a><br>
+                  </div>
+                  <div *ngIf="collectible.forSale" class="col-lg-2 mt-1 mr-2 align-content-lg-end">
+                    <h6>Price: {{collectible.estimatedValue}} EUR</h6>
+                    <p *ngIf="collectible.forSale">Condition: {{collectible.condition}} </p>
+                    <a routerLink="/marketplace/{{collectible.id}}">Request offer</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true">Collaps/Expand BlogPost Results</button>
+              </h5>
+            </div>
+          </div>
+
+          <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              <div class="content" id="blogPostResults">
+                <div>
+                  <div *ngFor="let post of searchedBlogPosts">
+                    <div class="d-flex justify-content-end page-link" routerLink="/edit_blog_post/{{post.id}}">
+                      <div class="col-lg-3  ">
+                        <img class="thumbnail img" src="{{post.collectible.imageUrl}}">
+                      </div>
+                      <div class="col-lg-9">
+                        <h3>{{post.title}}</h3>
+                        <p class="overflow-hidden">{{post.article}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true">Collaps/Expand Type Results</button>
+              </h5>
+            </div>
+          </div>
+
+          <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              <div class="content" id="typeResults">
+                <div>
+                  <div *ngFor="let type of searchedTypes">
+                    <div class="d-flex justify-content-end page-link" routerLink="/edit_type/{{type.name}}">
+                      <div class="col-lg-9">
+                        <p class="overflow-hidden">{{type.description}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-sm-3">
+      <app-sidebar-right-marketplace></app-sidebar-right-marketplace>
+    </div>
+
+  </div>
+</div>
+

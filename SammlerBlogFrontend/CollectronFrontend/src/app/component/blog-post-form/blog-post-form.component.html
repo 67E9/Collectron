@@ -1,0 +1,27 @@
+<div class="container">
+  <form class="card bg-violet p-3 text-light" [formGroup]="blogPostForm" (ngSubmit)="onSubmit(blogPostForm.value)">
+    <div class="form-group">
+      <h4 *ngIf ="routeId">BlogPost: Editing mode</h4>
+      <h4 *ngIf ="!routeId">BlogPost: Adding mode</h4>
+
+      <label *ngIf ="routeId">id:</label>
+      <input *ngIf ="routeId" class="form-control" type="number" formControlName="id" readonly>
+
+      <label>Title:</label>
+      <input class="form-control" type="text" formControlName="title">
+
+      <label>Article: </label>
+      <textarea rows="10" class="form-control" formControlName="article"></textarea>
+
+      <label >Collectible : </label>
+      <select class="form-control" formControlName="collectible" [compareWith]="compareCollectibles">
+        <option *ngFor="let collectible of collectibles" [ngValue]="collectible">{{collectible.name}}</option>
+      </select>
+
+    </div>
+
+    <button class="btn btn-warning mt-1 ml-auto d-inline" [disabled]="blogPostForm.invalid" type="submit">save</button>
+
+  </form>
+</div>
+

@@ -1,0 +1,15 @@
+placeholder{
+  height: 100px;
+  width: 100px
+}
+
+img{
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
+
+.entry{
+  height: 120px;
+  overflow: hidden;
+}

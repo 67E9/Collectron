@@ -1,0 +1,33 @@
+<div class="container bg-light">
+  <div class="row position-static">
+    <div class="mt-2 mb-1 ml-auto">
+      <select class="form-control" id="sorter" (change)="sortBy($event)">
+        <option value="alphabetic_a-z" selected>Alphabetic a-z</option>
+        <option value="alphabetic_z-a">Alphabetic z-a</option>
+      </select>
+    </div>
+  </div>
+
+  <div *ngIf="!allTypes">
+    <p>No types found</p>
+  </div>
+
+  <div class="text-center">
+      <button class="btn bg-violet text-light mt-2 mb-2" routerLink="/new_type">Create new Type</button>
+  </div>
+
+  <div class="row bg-light mb-1" *ngFor="let type of allTypes">
+    <div class="col-11">
+      <h3>{{type.name}}</h3>
+      <p>{{type.description}}</p>
+    </div>
+    <div class="col-1">
+      <button class ="btn d-block btn-warning mt-1" routerLink="/edit_type/{{type.id}}" >edit</button>
+      <button class="btn d-block btn-danger mt-1" (click)="deleteType(type)" [disabled]="type.collectibles.length > 0">delete</button>
+    </div>
+  </div>
+
+  <div class="text-center bg-light">
+    <button class="btn btn-dark mt-2 mb-2" routerLink="/manager">back</button>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="card text-white bg-violet ">
+  <form class="d-flex mt-4">
+    <input class="form-control me-2" #usersKeyword type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-success" type="submit" (click)="sendKeyword(usersKeyword.value)">Search</button>
+  </form>
+  <div *ngIf="router.url !== '/results'">
+    <div>
+
+      <!-- Search Field -->
+      <div class="mb-1 mt-4 d-flex">
+        <input class="input-group-sm" [(ngModel)]="filterService.searchText" placeholder="Filter" class="form-control"
+               (keyup)="
+               filterService.setSearchTerm(filterService.searchText);
+               filterService.filterSidebar();">
+        <button class="btn btn-secondary" (click)="filterService.clearFilter()">clear</button>
+      </div>
+    </div>
+
+    <!-- Items List -->
+    <div class="items-list ml-1 text-light text-truncate">
+      <div *ngFor="let i of filterService.getItems() | filter : filterService.getSearchTerm()" class="item-item">
+        <input (change)="filterService.getSelectedItems(); filterService.filterSidebar();" type="checkbox"
+               name="items"
+               value="{{i.id}}"
+               [(ngModel)]="i.selected"/>
+        <span class="item-text " *ngIf="i.name"> {{i.name}}</span>
+        <span class="item-text " *ngIf="i.title"> {{i.title}}</span>
+      </div>
+    </div>
+  </div>
+</div>

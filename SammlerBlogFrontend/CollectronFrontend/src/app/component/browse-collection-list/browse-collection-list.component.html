@@ -1,0 +1,25 @@
+<div>
+  <div *ngIf="!allItems.length">
+  <p>No collectibles found.</p>
+  </div>
+
+  <div class="row position-static">
+    <div class="mt-2 mb-1 ml-auto">
+      <select class="form-control" id="sorter" (change)="sortBy($event)">
+        <option value="alphabetic_a-z" selected>Alphabetic a-z</option>
+        <option value="alphabetic_z-a">Alphabetic z-a</option>
+      </select>
+    </div>
+  </div>
+
+  <div *ngIf="allItems.length" class="row">
+    <div class="col-sm-12 col-md-6 page-link" *ngFor="let collectible of allItems">
+      <div routerLink="/collection/{{collectible.id}}">
+        <figure class="figure">
+          <img src="{{collectible.imageUrl}}" class="figure-img img-fluid" alt="collectible image">
+          <figcaption class="figure-caption text-dark">{{collectible.name}}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>

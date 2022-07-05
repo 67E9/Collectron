@@ -1,0 +1,10 @@
+<div class="card mb-3 bg-violet">
+  <a routerLink="/marketplace" class="btn bg-yellow mb-3 mt-4">Collectible Marketplace</a>
+  <h2 class="card-header text-light text-center" ><img class="img-fluid mb-1" src="https://i.ibb.co/R0qQs31/dice.png" alt=""> Offer</h2>
+  <img class="card-img-top" routerLink="/marketplace/{{oneRandomCollectible.id}}" src="{{oneRandomCollectible.imageUrl}}" alt="Card image cap">
+  <div class="card-body text-light">
+    <h5 class="card-title" routerLink="/marketplace/{{oneRandomCollectible.id}}">{{oneRandomCollectible.name}}</h5>
+    <p class="card-text mb-auto" routerLink="/marketplace/{{oneRandomCollectible.id}}">~EUR: {{oneRandomCollectible.estimatedValue}}</p>
+    <p class="card-text mb-auto" routerLink="/marketplace/{{oneRandomCollectible.id}}"><small class="">{{oneRandomCollectible.description}}</small></p>
+  </div>
+</div>

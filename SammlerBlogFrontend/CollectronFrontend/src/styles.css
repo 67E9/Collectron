@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+
+.page-link {
+  color: hsla(196, 62%, 9%, 1);
+}
+.page-link:hover {
+  color: hsla(78, 78%, 42%, 1);
+}
+
+/*violet background*/
+
+.bg-violet {
+  background-color: hsla(270, 78%, 36%, 1) !important;
+}
+
+a.bg-violet:hover, a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+  background-color: hsla(270, 78%, 46%, 1) !important;
+}
+
+/*gray background*/
+
+.bg-gray {
+  background-color: hsla(196, 62%, 9%, 1) !important;
+}
+
+a.bg-gray:hover, a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+  background-color: hsla(96, 62%, 19%, 11) !important;
+}
+
+/*green background*/
+
+.bg-green {
+  background-color: hsla(95, 88%, 65%, 1) !important;
+}
+
+a.bg-green:hover, a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+  background-color: hsla(95, 88%, 50%, 1) !important;
+}
+
+/*dark green background*/
+
+.bg-darkgreen {
+  background-color: hsla(78, 78%, 42%, 1) !important;
+}
+
+a.bg-darkgreen:hover, a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+  background-color: hsla(78, 78%, 52%, 1) !important;
+}
+
+/*dark green background*/
+
+.bg-yellow {
+  background-color: hsla(39, 85%, 64%, 1) !important;
+}
+
+a.bg-yellow:hover, a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+  background-color: hsla(39, 85%, 74%, 1) !important;
+}
+
+.text-violet {
+  color: hsla(270, 78%, 36%, 1) !important;
+}
+
+/*template for bootstrap compatible color classes:*/
+/*.bg-primary {*/
+/*  background-color: #007bff !important;*/
+/*}*/
+
+/*a.bg-primary:hover, a.bg-primary:focus,*/
+/*button.bg-primary:hover,*/
+/*button.bg-primary:focus {*/
+/*  background-color: #0062cc !important;*/
+/*}*/
+
+/*.btn-primary {*/
+/*  color: #fff;*/
+/*  background-color: #007bff;*/
+/*  border-color: #007bff;*/
+/*}*/
+
+/*.btn-primary:hover {*/
+/*  color: #fff;*/
+/*  background-color: #0069d9;*/
+/*  border-color: #0062cc;*/
+/*}*/
+
+/*.btn-primary:focus, .btn-primary.focus {*/
+/*  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);*/
+/*}*/
+
+/*.btn-primary.disabled, .btn-primary:disabled {*/
+/*  color: #fff;*/
+/*  background-color: #007bff;*/
+/*  border-color: #007bff;*/
+/*}*/
+
+/*.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,*/
+/*.show > .btn-primary.dropdown-toggle {*/
+/*  color: #fff;*/
+/*  background-color: #0062cc;*/
+/*  border-color: #005cbf;*/
+/*}*/
+
+/*.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,*/
+/*.show > .btn-primary.dropdown-toggle:focus {*/
+/*  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);*/
+/*}*/
+
+/*!* Color Theme Swatches in Hex *!*/
+/*.The-Mystical-Jungle-1-hex { color: #5D14A6; }*/
+/*.The-Mystical-Jungle-2-hex { color: #091E26; }*/
+/*.The-Mystical-Jungle-3-hex { color: #7CF227; }*/
+/*.The-Mystical-Jungle-4-hex { color: #8ABF17; }*/
+/*.The-Mystical-Jungle-5-hex { color: #F2BC57; }*/
+
+/*!* Color Theme Swatches in RGBA *!*/
+/*.The-Mystical-Jungle-1-rgba { color: rgba(92, 19, 165, 1); }*/
+/*.The-Mystical-Jungle-2-rgba { color: rgba(8, 29, 38, 1); }*/
+/*.The-Mystical-Jungle-3-rgba { color: rgba(123, 242, 38, 1); }*/
+/*.The-Mystical-Jungle-4-rgba { color: rgba(137, 191, 22, 1); }*/
+/*.The-Mystical-Jungle-5-rgba { color: rgba(242, 187, 87, 1); }*/
+
+/*!* Color Theme Swatches in HSLA *!*/
+/*.The-Mystical-Jungle-1-hsla { color: hsla(270, 78, 36, 1); }*/
+/*.The-Mystical-Jungle-2-hsla { color: hsla(196, 62, 9, 1); }*/
+/*.The-Mystical-Jungle-3-hsla { color: hsla(95, 88, 55, 1); }*/
+/*.The-Mystical-Jungle-4-hsla { color: hsla(78, 78, 42, 1); }*/
+/*.The-Mystical-Jungle-5-hsla { color: hsla(39, 85, 64, 1); }*/

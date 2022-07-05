@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 col-sm-3">
+      <app-sidebar-left></app-sidebar-left>
+    </div>
+    <div class="col-lg-8 col-sm-6">
+      <div class="row position-static">
+        <div class="mt-2 mb-1 ml-auto">
+        <select class="form-control" id="sorter" (change)="sortBy($event)">
+          <option value="alphabetic_a-z" selected>Alphabetic a-z</option>
+          <option value="alphabetic_z-a">Alphabetic z-a</option>
+          <option value="value_low_to_high">Value low to high</option>
+          <option value="value_high_to_low">Value high to low</option>
+        </select>
+        </div>
+      </div>
+      <div class="mt-1 bg-yellow" *ngFor="let collectible of allCollectiblesForSale">
+        <div class="d-flex justify-content-end">
+          <div class="col-lg-2 mt-2 mb-2">
+            <img class="img-thumbnail" src="{{collectible.imageUrl}}" alt="thumbnail">
+          </div>
+          <div class="col-lg-8">
+            <h4>{{collectible.name}}</h4>
+            <p>Coll.Id: #{{collectible.id}}</p>
+<!--            <p>Condition: {{collectible.condition}} </p>-->
+          </div>
+          <div class="col-lg-2 mt-1 mr-2 align-content-lg-end">
+            <a routerLink="/collection/{{collectible.id}}">more details...</a><br>
+            <h6>Price: {{collectible.estimatedValue}} EUR</h6>
+            <a routerLink="/marketplace/{{collectible.id}}">Request offer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2 col-sm-3">
+      <app-sidebar-right-marketplace></app-sidebar-right-marketplace>
+    </div>
+  </div>
+</div>

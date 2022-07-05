@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 col-sm-3">
+      <app-sidebar-left></app-sidebar-left>
+    </div>
+    <div class="col-lg-8 col-sm-6">
+      <div class="row position-static">
+        <div class="mt-2 mb-1 ml-auto">
+          <select class="form-control" id="sorter" (change)="sortBy($event)">
+            <option value="alphabetic_a-z" selected>Alphabetic a-z</option>
+            <option value="alphabetic_z-a">Alphabetic z-a</option>
+            <option *ngIf="collectibleRouteId" value="newest">newest</option>
+            <option *ngIf="collectibleRouteId" value="oldest">oldest</option>
+          </select>
+        </div>
+      </div>
+      <div  class="mt-1 entry" *ngIf="!collectibleRouteId">
+        <a class="d-flex justify-content-end page-link bg-green text-violet" routerLink="/new_collectible">
+          <div class="col-lg-3">
+            <img class="img-thumbnail bg-light" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plus_font_awesome.svg/768px-Plus_font_awesome.svg.png" alt="thumbnail">
+          </div>
+          <div class="col-lg-9">
+            <h4>New Collectible...</h4>
+            <p>Create a new Collectible</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="mt-1 entry" routerLink="/new_blog_post" *ngIf="collectibleRouteId">
+        <a class="d-flex justify-content-end page-link bg-green text-violet" routerLink="/new_blog_post">
+          <div class="col-lg-3">
+            <img class="img-thumbnail bg-light" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plus_font_awesome.svg/768px-Plus_font_awesome.svg.png" alt="thumbnail">
+          </div>
+          <div class="col-lg-9">
+            <h4>New Blog Post...</h4>
+            <p>Create a new blog post</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="mt-1 entry" *ngFor="let collectible of allCollectibles">
+        <a class="d-flex justify-content-end page-link" (click)="selectItemForSideBar(collectible)">
+          <div class="col-lg-3">
+            <img class="img-thumbnail bg-light" src="{{collectible.imageUrl}}" alt="thumbnail">
+          </div>
+          <div class="col-lg-9">
+            <h4>{{collectible.name}}</h4>
+            <p>{{collectible.description}}</p>
+          </div>
+        </a>
+      </div>
+      <div class="mt-1 entry" *ngFor="let allBlogPostsOneCollectible of allBlogPostsOfCollectibleById">
+        <a class="d-flex justify-content-end page-link" (click)="selectItemForSideBar(allBlogPostsOneCollectible)">
+          <div class="col-lg-3">
+            <img class="img-thumbnail bg-light" src="{{allBlogPostsOneCollectible.collectible.imageUrl}}" alt="thumbnail">
+          </div>
+          <div class="col-lg-9">
+            <h4>{{allBlogPostsOneCollectible.title}}</h4>
+            <p>{{allBlogPostsOneCollectible.timeStamp}}</p>
+            <p>{{allBlogPostsOneCollectible.article}}</p>
+          </div>
+        </a>
+      </div>
+      <div *ngIf="collectibleRouteId">
+        <button class="btn btn-dark mt-1" routerLink="/manager">back</button>
+      </div>
+    </div>
+    <div class="col-lg-2 col-sm-3">
+      <app-sidebar-right-manager [collectible]="selectedCollectible" [blogPost]="selectedBlogPost"></app-sidebar-right-manager>
+    </div>
+  </div>
+</div>

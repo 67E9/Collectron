@@ -1,0 +1,12 @@
+.everythingBelowNav{
+  margin-top: 76px;
+}
+
+img{
+  height: 50px;
+  border-radius: 40px;
+}
+
+img:hover{
+  background-color: lightgrey;
+}

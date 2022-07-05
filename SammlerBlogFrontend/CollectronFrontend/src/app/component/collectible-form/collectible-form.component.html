@@ -1,0 +1,41 @@
+<div class="container">
+  <form *ngIf="!typeEditingMode" class="card bg-violet text-light p-3" [formGroup]="collectibleForm" (ngSubmit)="onSubmit(collectibleForm.value)">
+    <div class="form-group">
+      <h4 *ngIf ="routeId">Collectible: Editing mode</h4>
+      <h4 *ngIf ="!routeId">Collectible: Adding mode</h4>
+
+      <label *ngIf ="routeId">id:</label>
+      <input *ngIf ="routeId" class="form-control" type="number" formControlName="id" readonly>
+
+      <label>Name: </label>
+      <input class="form-control" type="text" formControlName="name">
+
+      <label>Description: </label>
+      <textarea rows="4" class="form-control" formControlName="description"></textarea>
+
+      <label>Estimated value: </label>
+      <input class="form-control" type="number" formControlName="estimatedValue">
+
+      <label>Image URL: </label>
+      <input class="form-control" type="text" formControlName="imageUrl">
+
+      <label>For Sale? </label>
+      <select class="form-control"  formControlName="forSale">
+        <option *ngFor="let forSalesStatus of [true, false]" [ngValue]=forSalesStatus>{{forSalesStatus?"yes":"no"}}</option >
+      </select>
+
+      <label>Type: </label>
+      <div class="row ml-1">
+        <select class="form-control col-9" formControlName="type" [compareWith]="compareType">
+          <option *ngFor="let type of types" [ngValue]="type">{{type.name}}</option>
+        </select>
+        <a type="button" (click)="toggleTypeForm()" class="btn btn-outline-light col-2 ml-auto mr-3">add new type</a>
+      </div>
+
+    </div>
+    <button class="btn btn-warning mt-1 ml-auto d-inline" [disabled]="collectibleForm.invalid" type="submit">save</button>
+  </form>
+
+  <app-type-form *ngIf="typeEditingMode" (newTypeEvent)="OnTypeEvent()"></app-type-form>
+
+</div>

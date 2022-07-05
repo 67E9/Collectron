@@ -1,0 +1,32 @@
+<div class="container">
+  <form class="form-group" [formGroup]="collectibleForSaleRequest" (ngSubmit)="onSubmit(collectibleForSaleRequest.value)">
+    <h3>Contact us...</h3>
+
+    <div class="row">
+      <div class="col-2">
+        <img class="img-thumbnail" src="{{requestCollectibleImageUrl}}">
+      </div>
+
+      <div class="col-10">
+      <label for="collectibleIdInput">The #ID of your requested Collectible</label>
+      <input formControlName="collectibleId" readonly value="{{collectibleIdForRequest}}" type="text" class="form-control" id="collectibleIdInput" aria-describedby="note">
+      <small id="idNote" class="form-text text-muted">You can use the #ID as reference for communication.</small>
+      </div>
+
+    </div>
+
+    <div class="row ">
+      <label for="InputYourEmail">Email address</label>
+      <input formControlName="email" required type="email" class="form-control" id="InputYourEmail" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <label for="InputRequestTextBody">Your message</label>
+      <textarea required formControlName="message" minlength="100" type="text" class="form-control" id="InputRequestTextBody" placeholder="Type in your message here..." rows="8"></textarea>
+      <div class="form-check">
+        <input formControlName="autoResponse" type="checkbox" class="form-check-input" id="ReceiveSubmitConfirmationMail">
+        <label class="form-check-label" for="ReceiveSubmitConfirmationMail">Receive submit confirmation by mail!</label>
+      </div>
+      <input type="hidden" name="_subject" value="Contact form submitted">
+    </div>
+    <button type="submit" [disabled]="!collectibleForSaleRequest.valid" onclick="history.go(-1)" class="btn btn-primary">Send request and go back</button>
+  </form>
+</div>
