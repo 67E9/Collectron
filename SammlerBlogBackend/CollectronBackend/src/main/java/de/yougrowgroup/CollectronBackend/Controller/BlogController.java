@@ -35,7 +35,7 @@ public class BlogController {
     }
 
     public List<BlogPost> findBlogPostByArticleContainsIgnoreCase(String article){
-        return blogPostService.findBlogPostsArticleContainsIgnoreCase(article);
+        return blogPostService.findBlogPostsByArticleContainsIgnoreCase(article);
     }
 
     @GetMapping("/find/{keyword}")

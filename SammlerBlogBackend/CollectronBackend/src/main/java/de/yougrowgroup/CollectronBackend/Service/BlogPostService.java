@@ -11,7 +11,7 @@ public interface BlogPostService {
     BlogPost findBlogPostById(Integer id);
     List<BlogPost> findAllBlogPosts();
     List<BlogPost> findBlogPostsByTitleContainsIgnoreCase(String keyword);
-    List<BlogPost> findBlogPostsArticleContainsIgnoreCase(String keyword);
+    List<BlogPost> findBlogPostsByArticleContainsIgnoreCase(String keyword);
     List<BlogPost> findBlogPostsByCollectibleId (Integer collectibleId);
 
     void updateBlogPost (BlogPost updatedPost);

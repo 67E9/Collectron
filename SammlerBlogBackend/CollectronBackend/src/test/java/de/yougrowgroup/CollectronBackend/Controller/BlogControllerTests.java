@@ -33,7 +33,7 @@ public class BlogControllerTests {
         List<BlogPost> result = new ArrayList<>(List.of(blogPost1, blogPost2, blogPost3));
 
         when(mockBlogPostService.findBlogPostsByTitleContainsIgnoreCase(any())).thenReturn(list1);
-        when(mockBlogPostService.findBlogPostsArticleContainsIgnoreCase(any())).thenReturn(list2);
+        when(mockBlogPostService.findBlogPostsByArticleContainsIgnoreCase(any())).thenReturn(list2);
 
         assertEquals(result, controller.findBlogPostByTitleAndArticle(any()));
     }

@@ -37,8 +37,7 @@ public class BlogPostServiceImpl implements BlogPostService {
         return blogPostRepository.findBlogPostByTitleContainsIgnoreCase(keyword);
     }
 
-    @Override
-    public List<BlogPost> findBlogPostsArticleContainsIgnoreCase(String keyword) {
+    public List<BlogPost> findBlogPostsByArticleContainsIgnoreCase(String keyword) {
         return blogPostRepository.findBlogPostByArticleContainsIgnoreCase(keyword);
     }
 
@@ -65,7 +64,7 @@ public class BlogPostServiceImpl implements BlogPostService {
         if (updatedPost.getId() != null && blogPostRepository.existsById(updatedPost.getId())) {
             blogPostRepository.save(updatedPost);
         } else {
-            throw new IllegalArgumentException("Cannot update. BlogPost with this id does not exists");
+            throw new IllegalArgumentException("Cannot update. BlogPost with this id does not exist");
         }
     }
 
@@ -74,7 +73,7 @@ public class BlogPostServiceImpl implements BlogPostService {
         if (blogPostRepository.existsById(id)) {
             blogPostRepository.deleteById(id);
         } else {
-            throw new IllegalArgumentException("Cannot delete. BlogPost with this id does not exists");
+            throw new IllegalArgumentException("Cannot delete. BlogPost with this id does not exist");
         }
     }
 
