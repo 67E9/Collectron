@@ -2,12 +2,14 @@ package de.yougrowgroup.CollectronBackend.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 
@@ -23,11 +25,12 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
+    @Bean
     SecurityFilterChain defaultSecurityFilterChain (HttpSecurity http) throws Exception{
 
         http
                 .sessionManagement()
-                    .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED) //to be changed to stateless when jwt is implemented
+                .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED) //to be changed to stateless when jwt is implemented
                 .and().cors().configurationSource(new CorsConfigurationSource() {
                     @Override
                     public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
@@ -39,14 +42,20 @@ public class SecurityConfig {
                         config.setExposedHeaders(Arrays.asList("Authorization"));
                         config.setMaxAge(3600L);
                         return config;
-
                     }
-                    })
+                })
                 .and().csrf().disable() //enable unless you implement jwt
                 .authorizeHttpRequests(auth -> auth
-                        .antMatchers("/**").permitAll() //add correct antmatchers
+                        .antMatchers(HttpMethod.POST).hasRole("ADMIN")
+                        .antMatchers(HttpMethod.PUT).hasRole("ADMIN")
+                        .antMatchers(HttpMethod.DELETE).hasRole("ADMIN")
+                        .antMatchers("/api/user/**").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.GET, "/api/blogPost/**").permitAll()
+                        .antMatchers(HttpMethod.GET, "/api/collectible/**").permitAll()
+                        .antMatchers(HttpMethod.GET, "/api/type/**").permitAll()
                 //add filters here
-                ).httpBasic(Customizer.withDefaults());
+                )
+                .httpBasic(Customizer.withDefaults());
 
         return http.build();
     }

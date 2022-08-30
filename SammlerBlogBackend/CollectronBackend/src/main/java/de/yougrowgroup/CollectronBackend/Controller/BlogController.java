@@ -29,13 +29,6 @@ public class BlogController {
         return blogPostService.findAllBlogPosts();
     }
 
-    public List<BlogPost> findBlogPostByTitleContainsIgnoreCase(String title){
-        return blogPostService.findBlogPostsByTitleContainsIgnoreCase(title);
-    }
-
-    public List<BlogPost> findBlogPostByArticleContainsIgnoreCase(String article){
-        return blogPostService.findBlogPostsByArticleContainsIgnoreCase(article);
-    }
 
     @GetMapping("/find/{keyword}")
     public List<BlogPost> findBlogPostByTitleAndArticle(@PathVariable String keyword){
@@ -45,6 +38,14 @@ public class BlogController {
                 filter(post -> !byTitle.contains(post))
                 .forEach(byTitle::add);
         return byTitle;
+    }
+
+    public List<BlogPost> findBlogPostByTitleContainsIgnoreCase(String title){
+        return blogPostService.findBlogPostsByTitleContainsIgnoreCase(title);
+    }
+
+    public List<BlogPost> findBlogPostByArticleContainsIgnoreCase(String article){
+        return blogPostService.findBlogPostsByArticleContainsIgnoreCase(article);
     }
 
     @GetMapping("/collectible/{collectibleId}")
