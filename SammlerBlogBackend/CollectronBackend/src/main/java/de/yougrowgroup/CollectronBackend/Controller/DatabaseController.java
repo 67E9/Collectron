@@ -12,7 +12,6 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*")
 @RequestMapping("/api")
 public class DatabaseController {
     private final CollectibleService collectibleService;
