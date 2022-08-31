@@ -1,8 +1,6 @@
 package de.yougrowgroup.CollectronBackend.Controller;
 
-import de.yougrowgroup.CollectronBackend.Controller.DatabaseController;
-import de.yougrowgroup.CollectronBackend.Entity.Collectible;
-import de.yougrowgroup.CollectronBackend.Service.BlogPostService;
+import de.yougrowgroup.CollectronBackend.Model.Collectible;
 import de.yougrowgroup.CollectronBackend.Service.CollectibleService;
 import de.yougrowgroup.CollectronBackend.Service.TypeService;
 import org.junit.jupiter.api.Test;

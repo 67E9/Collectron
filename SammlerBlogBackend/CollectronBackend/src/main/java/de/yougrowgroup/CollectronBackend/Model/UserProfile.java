@@ -1,4 +1,4 @@
-package de.yougrowgroup.CollectronBackend.Entity;
+package de.yougrowgroup.CollectronBackend.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;

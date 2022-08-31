@@ -1,8 +1,7 @@
 package de.yougrowgroup.CollectronBackend.Service;
 
-import de.yougrowgroup.CollectronBackend.Entity.Type;
+import de.yougrowgroup.CollectronBackend.Model.Type;
 import de.yougrowgroup.CollectronBackend.Repository.TypeRepository;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

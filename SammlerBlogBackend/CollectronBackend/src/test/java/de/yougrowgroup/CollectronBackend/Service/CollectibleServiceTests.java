@@ -1,16 +1,12 @@
 package de.yougrowgroup.CollectronBackend.Service;
 
-import de.yougrowgroup.CollectronBackend.Entity.BlogPost;
-import de.yougrowgroup.CollectronBackend.Entity.Collectible;
+import de.yougrowgroup.CollectronBackend.Model.Collectible;
 import de.yougrowgroup.CollectronBackend.Repository.CollectibleRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.util.ArrayList;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;

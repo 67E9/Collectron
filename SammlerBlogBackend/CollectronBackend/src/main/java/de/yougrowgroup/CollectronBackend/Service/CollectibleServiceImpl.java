@@ -1,6 +1,6 @@
 package de.yougrowgroup.CollectronBackend.Service;
 
-import de.yougrowgroup.CollectronBackend.Entity.Collectible;
+import de.yougrowgroup.CollectronBackend.Model.Collectible;
 import de.yougrowgroup.CollectronBackend.Repository.CollectibleRepository;
 import org.springframework.stereotype.Service;
 

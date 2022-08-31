@@ -1,5 +1,5 @@
 package de.yougrowgroup.CollectronBackend.Controller;
-import de.yougrowgroup.CollectronBackend.Entity.BlogPost;
+import de.yougrowgroup.CollectronBackend.Model.BlogPost;
 import de.yougrowgroup.CollectronBackend.Service.BlogPostService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

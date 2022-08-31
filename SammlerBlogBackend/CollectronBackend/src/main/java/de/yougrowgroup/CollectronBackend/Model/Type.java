@@ -1,4 +1,4 @@
-package de.yougrowgroup.CollectronBackend.Entity;
+package de.yougrowgroup.CollectronBackend.Model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

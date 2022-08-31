@@ -18,4 +18,4 @@ INSERT INTO blog_post (title, article, time_stamp, collectible_id) VALUES ('Ooop
 
 --admin password for tests: 12345
 INSERT INTO user_profile (id, name, role, password) VALUES (0, 'admin', 'ROLE_ADMIN', '$2a$12$6dafwhkajhwYy4a7/MZpJuS05Vj9.kfL3Zzj67ezrX4wqIbIFRJGG');
-INSERT INTO user_profile (id, name, role, password) VALUES (1, 'viewer', 'ROLE_VIEWER', '$2a$12$6dafwhkajhwYy4a7/MZpJuS05Vj9.kfL3Zzj67ezrX4wqIbIFRJGG');
+INSERT INTO user_profile (id, name, role, password) VALUES (-1, 'viewer', 'ROLE_VIEWER', '$2a$12$6dafwhkajhwYy4a7/MZpJuS05Vj9.kfL3Zzj67ezrX4wqIbIFRJGG');

@@ -1,6 +1,6 @@
 package de.yougrowgroup.CollectronBackend.Repository;
 
-import de.yougrowgroup.CollectronBackend.Entity.Type;
+import de.yougrowgroup.CollectronBackend.Model.Type;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

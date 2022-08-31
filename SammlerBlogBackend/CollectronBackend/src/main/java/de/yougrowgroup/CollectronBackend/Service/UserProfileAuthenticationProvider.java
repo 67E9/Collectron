@@ -1,6 +1,6 @@
 package de.yougrowgroup.CollectronBackend.Service;
 
-import de.yougrowgroup.CollectronBackend.Entity.UserProfile;
+import de.yougrowgroup.CollectronBackend.Model.UserProfile;
 import de.yougrowgroup.CollectronBackend.Repository.UserProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;

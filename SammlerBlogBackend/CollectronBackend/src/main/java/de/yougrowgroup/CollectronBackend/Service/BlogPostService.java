@@ -1,6 +1,6 @@
 package de.yougrowgroup.CollectronBackend.Service;
 
-import de.yougrowgroup.CollectronBackend.Entity.BlogPost;
+import de.yougrowgroup.CollectronBackend.Model.BlogPost;
 
 import java.util.List;
 
