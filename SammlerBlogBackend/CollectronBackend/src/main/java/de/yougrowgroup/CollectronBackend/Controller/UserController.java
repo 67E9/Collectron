@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -81,4 +81,12 @@ public class UserController {
         }
     }
 
+    @GetMapping("/login")
+    public UserProfile getUserDataOnLogin(Principal user){
+        if (userService.userExists(user.getName())){
+            return userService.loadUserProfileByUsername(user.getName());
+        } else {
+            return new UserProfile(null, "", "", "");
+        }
+    }
 }
