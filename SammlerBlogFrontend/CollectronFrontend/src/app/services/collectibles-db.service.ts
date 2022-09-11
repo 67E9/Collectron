@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {Collectible} from "../model/Collectible";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { Collectible } from "../model/Collectible";
+
+//TODO: switch to https, replace root path with variable
 
 @Injectable({
   providedIn: 'root'
